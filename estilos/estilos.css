@@ -1,18 +1,17 @@
-/*Existen dos tipos de selectores
+/*Existen cuatro tipos de selectores
 globales: que se aplica a todo el documento
 etiqueta: se aplica a la etiqueta correspondiente
-clase: se aplica al componente indicado que se invoca mediante su nombre, 
-se utiliza las veces necesarias y el simbolo que se utiliza es el . 
-id: se aplica al componente indicado que se invoca mediante su nombre, 
-se utiliza una sola vez y su simbolo es #
+clase: se aplica al componente indicado que se invoca
+mediante su nombre, se utiliza las veces necesarias y el
+simbolo que se utiliza es el .
+id: Se aplica al componente indicado que se invoca
+mediante su nombre, se utiliza una sola vez y su
+simbolo es #
 */
 
-
-/*-----------------------
+/*----------------------
     selector global
 ------------------------*/
-
-/* CORREGIDO: Usamos * para el selector global */
 * {
     box-sizing: border-box;
 }
@@ -21,167 +20,192 @@ body {
     margin: 0;
     padding: 32px 20px;
     font-family: Arial, Helvetica, sans-serif;
-    color: black;
-    background-color: #E3BCBC; /* Tu color original de fondo */
+    color: #304724;
+    background: #f3f6f6;
 }
 
-/* Contenedor principal */
-
+/*Aplicamos estilos al conteneor main*/
 main {
     max-width: 1400px;
     margin: 0 auto;
 }
 
-/* Cabecera de la página */
-
+/*Estilos para le header*/
 header {
     margin-bottom: 24px;
 }
 
+/*Estilos h1*/
 h1 {
     margin: 0 0 8px;
-    font-size: clamp(28px, 4vw, 50px);
+    font-size: clamp(24px, 4vw, 34px);
+    color: #15243b;
 }
 
 header p {
     margin: 0;
-    color: red; /* Tu color original */
+    color: #64748b;
     line-height: 1.5;
 }
 
-/* Contenedor de la tabla */
-
+/*Permite consultar todas las columnas en pantallas pequeñas*/
 .tabla-contenedor {
     overflow-x: auto;
-    background: white;
-    border: 2.5px solid #E64E4E; /* Tu borde original */
-    border-radius: 20px;
-    box-shadow: 0 8px 24px rgba(18, 33, 41, 0.06);
-    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #dce4ee;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgb(15 23 42 / 6%);
 }
 
-/* Título superior dentro de la tabla */
-.titulo-tabla {
-    padding: 8px 0 16px 0;
-    font-size: 16px;
-    font-weight: bold;
-    color: black;
+/*invocamos un pseudoclase*/
+.tabla-contenedor:focus-visible {
+    outline: 3px solid #2563eb;
+    outline-offset: 4px;
 }
 
-/* Tabla de ventas */
-
+/*Creamos estilos a la etiqueta table*/
 table {
     width: 100%;
     min-width: 1100px;
     border-collapse: collapse;
-    background-color: white;
+    font-size: 14px;
 }
 
-/* Encabezados con tu color original */
-thead {
-    background-color: #E64E4E;
-    color: white;
-}
-
-th,
-td {
-    border: 1px solid #cccccc;
-    padding: 12px;
-    text-align: center;
-    vertical-align: middle;
-}
-
-th {
-    font-weight: bold;
-}
-
-/* Descripciones */
-
-.descripcion {
+caption {
+    padding: 18px 20px;
     text-align: left;
-    min-width: 220px;
-    color: #333;
+    font-weight: 700;
+    color: #334155;
+    background: #ffffff;
 }
 
-/* Imágenes de los productos */
-
-.imagen-producto {
-    width: 64px;
-    height: 64px;
-    object-fit: contain;
+/*Estilos a la cabecera de la tabla*/
+thead th {
+    padding: 12px 10px;
+    color: #ffffff;
+    background: #17365c;
+    border: 1px solid #365170;
+    text-align: center;
+    line-height: 1.4;
 }
 
-/* Categoría y producto */
+thead tr:nth-child(2) th {
+    background: #234a78;
+}
+
+tbody td, 
+tbody th {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 1.4;
+}
+
+tbody tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+tbody tr:hover {
+    background: #edf5ff;
+}
+
+tbody tr:last-child td, 
+tbody tr:last-child th {
+    border-bottom: none;
+}
 
 .categoria {
-    background-color: #F8DADA; 
-    font-weight: bold;
-    vertical-align: middle;
+    width: 160px;
+    background: #eef3f9;
+    color: #17365c;
+    font-weight: 700;
 }
 
-.subtexto-categoria {
+.categoria small {
     display: block;
-    font-weight: normal;
-    font-size: 12px;
-    color: #555;
     margin-top: 4px;
+    color: #64748b;
+    font-weight: 400;
 }
 
 .producto {
-    font-weight: bold;
-    text-align: left;
+    font-weight: 700;
 }
 
-/* Cantidades y precios */
+.descripcion {
+    min-width: 190px;
+    max-width: 260px;
+    color: #64748b;
+}
 
-.numero,
+.numero {
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+}
+
 .dinero {
+    text-align: right;
     white-space: nowrap;
+    font-variant-numeric: tabular-nums;
 }
 
 .total-ventas {
-    font-weight: bold;
-    color: #C62828;
+    color: #166534;
+    font-weight: 700;
 }
 
-/* Efecto al pasar el cursor */
-
-tbody tr:hover {
-    background-color: #FFF0F0;
+.imagen-producto {
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto;
+    padding: 4px;
+    object-fit: contain;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
 }
 
-/* Nota debajo de la tabla */
+/*Selector tipo clase*/
+.container {
+    color: blue;
+    text-align: right;
+}
+
 .nota {
-    margin-top: 16px;
-    line-height: 1.5;
-    color: red; 
+    margin: 12px 0 24px;
+    font-size: 13px;
+    color: #64748b;
 }
-
-/* Enlace para volver al inicio */
 
 .enlace-home {
     display: inline-block;
-    margin-top: 12px;
-    padding: 10px 16px;
-    color: white;
-    background-color: #C62828; 
+    padding: 12px 18px;
+    color: #ffffff;
+    background: #2563eb;
+    border-radius: 8px;
     text-decoration: none;
-    border-radius: 6px;
+    font-weight: 700;
 }
 
 .enlace-home:hover {
-    background-color: #8E1818;
+    background: #1d4ed8;
 }
 
-/* Ajustes para pantallas pequeñas */
+.enlace-home:focus-visible {
+    outline: 3px solid #17365c;
+    outline-offset: 3px;
+}
 
 @media (max-width: 600px) {
     body {
         padding: 24px 12px;
     }
+    
     thead th,
     tbody td,
     tbody th {
-        border-radius: 12px 10px;
+        padding: 12px 10px;
     }
 }
