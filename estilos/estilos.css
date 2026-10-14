@@ -1,0 +1,187 @@
+/*Existen dos tipos de selectores
+globales: que se aplica a todo el documento
+etiqueta: se aplica a la etiqueta correspondiente
+clase: se aplica al componente indicado que se invoca mediante su nombre, 
+se utiliza las veces necesarias y el simbolo que se utiliza es el . 
+id: se aplica al componente indicado que se invoca mediante su nombre, 
+se utiliza una sola vez y su simbolo es #
+*/
+
+
+/*-----------------------
+    selector global
+------------------------*/
+
+/* CORREGIDO: Usamos * para el selector global */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 32px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    background-color: #E3BCBC; /* Tu color original de fondo */
+}
+
+/* Contenedor principal */
+
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Cabecera de la página */
+
+header {
+    margin-bottom: 24px;
+}
+
+h1 {
+    margin: 0 0 8px;
+    font-size: clamp(28px, 4vw, 50px);
+}
+
+header p {
+    margin: 0;
+    color: red; /* Tu color original */
+    line-height: 1.5;
+}
+
+/* Contenedor de la tabla */
+
+.tabla-contenedor {
+    overflow-x: auto;
+    background: white;
+    border: 2.5px solid #E64E4E; /* Tu borde original */
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(18, 33, 41, 0.06);
+    padding: 20px;
+}
+
+/* Título superior dentro de la tabla */
+.titulo-tabla {
+    padding: 8px 0 16px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+
+/* Tabla de ventas */
+
+table {
+    width: 100%;
+    min-width: 1100px;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+/* Encabezados con tu color original */
+thead {
+    background-color: #E64E4E;
+    color: white;
+}
+
+th,
+td {
+    border: 1px solid #cccccc;
+    padding: 12px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+th {
+    font-weight: bold;
+}
+
+/* Descripciones */
+
+.descripcion {
+    text-align: left;
+    min-width: 220px;
+    color: #333;
+}
+
+/* Imágenes de los productos */
+
+.imagen-producto {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
+
+/* Categoría y producto */
+
+.categoria {
+    background-color: #F8DADA; 
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.subtexto-categoria {
+    display: block;
+    font-weight: normal;
+    font-size: 12px;
+    color: #555;
+    margin-top: 4px;
+}
+
+.producto {
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Cantidades y precios */
+
+.numero,
+.dinero {
+    white-space: nowrap;
+}
+
+.total-ventas {
+    font-weight: bold;
+    color: #C62828;
+}
+
+/* Efecto al pasar el cursor */
+
+tbody tr:hover {
+    background-color: #FFF0F0;
+}
+
+/* Nota debajo de la tabla */
+.nota {
+    margin-top: 16px;
+    line-height: 1.5;
+    color: red; 
+}
+
+/* Enlace para volver al inicio */
+
+.enlace-home {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 16px;
+    color: white;
+    background-color: #C62828; 
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.enlace-home:hover {
+    background-color: #8E1818;
+}
+
+/* Ajustes para pantallas pequeñas */
+
+@media (max-width: 600px) {
+    body {
+        padding: 24px 12px;
+    }
+    thead th,
+    tbody td,
+    tbody th {
+        border-radius: 12px 10px;
+    }
+}
